@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito</title>
+  <link rel="stylesheet" href="stylecarrito.css">
+</head>
+
+<body>
+  <div class="carrito-container">
+    <div class="tabs">
+      <div class="tab active" onclick="openTab(event, 'prestamo')">Préstamo</div>
+      <div class="tab" onclick="openTab(event, 'reserva')">Reserva</div>
+    </div>
+    <div id="prestamo" class="tab-content active">
+      <h3>Préstamo de libros</h3>
+      <p>Lista de libros agregados al carrito:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre del libro</th>
+            <th>Autor</th>
+            <th>Fecha de devolución</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ejemplo de Libro 1</td>
+            <td>Autor 1</td>
+            <td><input type="date"></td>
+            <td>
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ejemplo de Libro 2</td>
+            <td>Autor 2</td>
+            <td><input type="date"></td>
+            <td>
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="reserva" class="tab-content">
+      <h3>Reserva de libros</h3>
+      <p>Seleccione una fecha para reservar sus libros:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre del libro</th>
+            <th>Autor</th>
+            <th>Fecha de reserva</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ejemplo de Libro 1</td>
+            <td>Autor 1</td>
+            <td><input type="date"></td>
+            <td>
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ejemplo de Libro 2</td>
+            <td>Autor 2</td>
+            <td><input type="date"></td>
+            <td>
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="summary-container">
+    <div class="summary-content">
+      <h3>Resumen de libros</h3>
+      <div class="summary-item">
+        <h4>Cantidad total: [#]</h4>
+      </div>
+    </div>
+    <button class="summary-button">Recibir préstamo</button>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks, summaryButton;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tab");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.classList.add("active");
+
+      summaryButton = document.querySelector('.summary-button');
+      if (tabName === 'prestamo') {
+        summaryButton.textContent = 'Recibir préstamo';
+      } else if (tabName === 'reserva') {
+        summaryButton.textContent = 'Reservar';
+      }
+    }
+  </script>
+</body>
+
+</html>
