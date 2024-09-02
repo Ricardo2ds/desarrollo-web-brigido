@@ -1,0 +1,109 @@
+/* Estilos Generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+}
+
+/* Sidebar de Navegación */
+.sidebar {
+    width: 250px;
+    background: rgba(75, 55, 35, 0.94);
+    height: 100vh;
+    position: fixed;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h2 {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #C09788;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s, padding-left 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #C09788;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+/* Contenido Principal */
+.content {
+    margin-left: 250px;
+    padding: 40px;
+    width: calc(100% - 250px);
+    overflow-y: auto;
+}
+
+.content h1 {
+    color: #C09788;
+    text-shadow: 
+        1px 1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1);
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead {
+    background: #C09788;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+table th {
+    color: white;
+}
+
+table td {
+    color: #ecf0f1;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
