@@ -9,17 +9,25 @@
 </head>
 
 <body>
+  <!-- Header de la pagina -->
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="carrito-container">
     <div class="tabs">
-      <div class="tab active" onclick="openTab(event, 'prestamo')">Préstamo</div>
-      <div class="tab" onclick="openTab(event, 'reserva')">Reserva</div>
+      <div class="tab active" onclick="openTab(event, 'prestamo')">Préstamo</div> <!-- Al click establece la version de la pagina en prestamo-->
+      <div class="tab" onclick="openTab(event, 'reserva')">Reserva</div> <!-- Al click establece la version de la pagina en reserva-->
     </div>
-    <div id="prestamo" class="tab-content active">
+    <div id="prestamo" class="tab-content active"> <!--Contenidos de la version prestamo-->
       <h3>Préstamo de libros</h3>
       <p>Lista de libros agregados al carrito:</p>
       <table>
         <thead>
-          <tr>
+          <tr><!-- Esta parte es la tabla del carrito de momento tiene placeholders al no tener realizada la conexion con DB-->
             <th>#</th>
             <th>Nombre del libro</th>
             <th>Autor</th>
@@ -61,12 +69,12 @@
         </tbody>
       </table>
     </div>
-    <div id="reserva" class="tab-content">
+    <div id="reserva" class="tab-content"> <!--Contenido de la version reserva-->
       <h3>Reserva de libros</h3>
       <p>Seleccione una fecha para reservar sus libros:</p>
       <table>
         <thead>
-          <tr>
+          <tr><!-- Placeholders para la version reserva-->
             <th>#</th>
             <th>Nombre del libro</th>
             <th>Autor</th>
@@ -109,7 +117,7 @@
       </table>
     </div>
   </div>
-
+<!-- Segundo cuadro de la pagina que muestra cuantos libros fueron seleccionados y contiene el boton para poder realizar la reserva o prestamo-->
   <div class="summary-container">
     <div class="summary-content">
       <h3>Resumen de libros</h3>
@@ -119,7 +127,7 @@
     </div>
     <button class="summary-button">Recibir préstamo</button>
   </div>
-
+<!--Funcionalidad de las ventanas gemelas reserva y prestamo-->
   <script>
     function openTab(evt, tabName) {
       var i, tabcontent, tablinks, summaryButton;
@@ -143,5 +151,4 @@
     }
   </script>
 </body>
-
 </html>
