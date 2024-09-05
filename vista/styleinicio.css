@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: url(../imagenes/inicio.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(75, 55, 35, 0.94);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+header img {
+    height: 100%;
+    cursor: pointer;
+    max-height: 100%;
+    width: 15%;
+}
+
+header .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+header .buttons button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header .buttons button:hover {
+    background-color: #555;
+}
+
+.content h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    text-shadow: 
+        1px 1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1);
+}
+
+.content-wrapper {
+    flex: 1;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    justify-content: center; /* Centra los libros dentro del contenedor */
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo para centrar */
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Permite que los libros se alineen en varias filas si el espacio es limitado */
+}
+
+.content .box {
+    background-color: rgba(244, 244, 244, 0.9); /* Fondo semitransparente */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Asegura que la información esté debajo de la imagen */
+    align-items: center;
+    justify-content: center;
+    color: black; /* Cambia el color del texto a negro para que sea legible */
+    border-radius: 10px;
+    text-align: center; /* Centra el texto debajo de la imagen */
+}
+
+.content .box img {
+    max-width: 100%;
+    max-height: 300px; /* Ajusta la altura máxima de la imagen */
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Añade espacio entre la imagen y el texto */
+}
+
+.book-info h3 {
+    margin: 10px 0 5px 0; /* Espaciado entre el título y el autor */
+    font-size: 20px;
+}
+
+.book-info p {
+    margin: 0;
+    font-size: 16px;
+    color: #333; /* Color del autor para diferenciar del título */
+}
+
+.content-wrapper .button-group {
+    display: flex;
+    gap: 50px; /* Aumenta el espacio entre los botones */
+}
+
+.content-wrapper .button-group button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Aumenta el tamaño de los botones */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px; /* Aumenta el tamaño del texto en los botones */
+}
+
+.content-wrapper .button-group button:hover {
+    background-color: #555;
+}
