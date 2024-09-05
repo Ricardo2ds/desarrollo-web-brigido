@@ -1,13 +1,18 @@
+<!-- Declaración DOCTYPE del documento para establecer que es un archivo HTML. También declaración del idioma en el que está escrita la página. -->
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- Se define la codificación de carácteres como UTF8, el diseño ajustado para ser tipo responsivo en otros dispositivos, título de la página y la referencia a la hoja de estilo CSS. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="styleinicio.css">
 </head>
+
+<!-- Cuerpo de la página donde está contenido todos los elementos y funcionalidades que se harán visibles. -->
 <body>
+    <!-- Cabecera de la página donde se encuentra el logo y botones de inicio de sesión y registro. -->
     <header>
         <a href="inicio.html"><img src="../imagenes/logo.png" alt="Logo"></a>
         <div class="buttons">
@@ -15,38 +20,44 @@
             <button onclick="location.href='register.html'">Registrarse</button>
         </div>
     </header>
-
+    
+    <!-- Contenedor que tiene definido el título principal de la página y sección de libros populares del mes. -->
     <div class="content-wrapper">
         <div class="content">
             <h2 class="section-title">POPULARES ESTE MES</h2>
         </div>
     </div>
-
+    
+    <!-- Agrupación de elementos tipo caja que contienen toda la información de cada libro presentad, como la imágen, título y autor de este. -->
     <div class="content-wrapper">
         <div class="content">
+            <!-- Información y presentación del libro El Señor de Los Anillos de J.R.R. Tolkien. -->
             <div class="box">
                 <img src="../imagenes/tolkien.jpg" alt="La comunidad del Anillo">
-                <div class="book-info">
+                <div class="libro-info">
                     <h3>La comunidad del Anillo</h3>
                     <p>J.R.R. Tolkien</p>
                 </div>
             </div>
+            <!-- Información y presentación del libro Física de Raymond A. Serway. -->
             <div class="box">
                 <img src="../imagenes/serway.jpg" alt="Serway Física">
-                <div class="book-info">
+                <div class="libro-info">
                     <h3>Serway Física</h3>
                     <p>Raymond A. Serway</p>
                 </div>
             </div>
+            <!-- Información y presentación del libro Mac el microbio desconocido de Herán del Solar. -->
             <div class="box">
                 <img src="../imagenes/mac.jpg" alt="Mac el microbio desconocido">
-                <div class="book-info">
+                <div class="libro-info">
                     <h3>Mac el microbio desconocido</h3>
                     <p>Hernán del Solar</p>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Agrupación de botones para ir a las páginas de Catálogo y Reserva -->
     <div class="content-wrapper">
         <div class="content">
             <div class="button-group">
