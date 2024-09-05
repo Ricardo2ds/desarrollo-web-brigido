@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: #2c3e50;
+    background: url(../imagenes/inicio.png) no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
     color: white;
     display: flex;
 }
@@ -11,7 +12,7 @@ body {
 /* Sidebar de Navegación */
 .sidebar {
     width: 250px;
-    background: rgba(75, 55, 35, 0.94);
+    background: rgba(75, 55, 35, 0.94); /* Fondo opaco para mejor legibilidad */
     height: 100vh;
     position: fixed;
     padding-top: 20px;
@@ -54,6 +55,8 @@ body {
     padding: 40px;
     width: calc(100% - 250px);
     overflow-y: auto;
+    background: url(../Admin/inicio.png);
+    border-radius: 10px;
 }
 
 .content h1 {
@@ -70,6 +73,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background: rgba(255, 255, 255, 0.089); /* Fondo semitransparente para las tablas */
 }
 
 table thead {
@@ -83,7 +87,7 @@ table th, table td {
 }
 
 table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 table th {
