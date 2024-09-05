@@ -1,0 +1,233 @@
+/*########### Diseño de la barra superior header ###########*/
+
+/* Diseño de la barra header */
+
+header {
+  width: 100%;
+  height: auto;
+  background-color: rgba(75, 55, 35, 0.94);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  position: fixed; 
+  top: 0; 
+  z-index: 1000; 
+}
+
+/* Logo de biblioteca que esta en header */
+
+header img {
+  height: 100%;
+  cursor: pointer;
+  max-height: 100%;
+  width: 12%;
+}
+
+/* Botones de "iniciar sesión" y "registrarse" que están en header */
+
+header .buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Diseño de los botones de "iniciar sesión" y "registrarse", como el color, borde de esquinas, etc. */
+
+header .buttons button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Diseño de los botones de "iniciar sesión" y "registrarse" cuando el cursor pasa por encima */
+
+header .buttons button:hover {
+  background-color: #555;
+}
+
+/*########### Diseño de la página ###########*/
+
+/* Diseño de la página como el fondo, estilo de texto, organización de los elementos, etc.  */
+body {
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: url(../imagenes/inicio.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Diseño del formulario */
+
+.formulario {
+  width: 600px;
+  background: rgb(75,55,35,0.94);
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 100px;
+  display: grid;
+}
+
+/* Diseño del título del formulario */
+
+.formulario h1 {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 0 solid silver;
+  color: white;
+}
+
+/* Diseño del ancho para escribir en el formulario */
+
+.formulario form {
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+/* Diseño de las líneas para escribir formulario */
+
+form .titulo,
+form .autor,
+form .editorial,
+form .edicion,
+form .añoedicion,
+form .ubiestanteria {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 35px 0;
+}
+
+/* Diseño de las entradas del formulario */
+
+form .titulo input,
+form .autor input,
+form .editorial input,
+form .edicion input,
+form .añoedicion input,
+form .ubiestanteria input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+}
+
+/* Diseño de las etiquetas del formulario */
+
+form .titulo label,
+form .autor label,
+form .editorial label,
+form .edicion label,
+form .añoedicion label,
+form .ubiestanteria label {
+  position: absolute;
+  color: white;
+  transform: translateY(-50%);
+  transition: .5s;
+}
+
+form .titulo input:focus~label,
+form .autor input:focus~label,
+form .editorial input:focus~label,
+form .edicion input:focus~label,
+form .añoedicion input:focus~label,
+form .ubiestanteria input:focus~label {
+  top: -5px;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Diseño de la etiqueta de "Tipo libro" */
+
+form .tipolibro {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.tipolibro label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: white;
+}
+
+/* Color del texto de las opciones circulares */
+
+.radio-group {
+  color: #f9f9f9;
+}
+
+/* Separación de las opciones circulares */
+
+.radio-group input{
+  margin-right: 8px;
+}
+
+/* Diseño de la tabla con opciones de libros */
+
+form .tabla {
+  color:#f1f1f1;
+  text-align: left;
+  margin: 20px 0;
+}
+
+/*########### Diseño de los botones "Registrar" y "Volver" ###########*/
+
+/* Diseño del botón de "Registrar datos" del libro */
+
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #C09788;
+  border-radius: 25px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  margin: 20px 0;
+}
+
+/* Diseño del botón "Volver" */
+
+.registrarse {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+.registrarse a {
+  color: #C09788;
+  text-decoration: none;
+}
+
+.registrarse a:hover {
+  text-decoration: underline;
+}
+
+/* Diseño para campos de texto ya completados */
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #ffffff;
+}

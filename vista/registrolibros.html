@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar un libro</title>
+  <link rel="stylesheet" href="styleregistrolibro.css">
+</head>
+
+<!-- Se define un fondo para la página, un logo y botones para iniciar sesión y registrarse -->
+<body>
+  <header>
+    <a href="inicio.html"><img src="../imagenes/logo.png" alt="Logo"></a>
+    <div class="buttons">
+      <button onclick="location.href='login.html'">Iniciar Sesión</button>
+      <button onclick="location.href='register.html'">Registrarse</button>
+    </div>
+  </header>
+
+<!-- Creación del formulario -->
+
+  <div class="formulario">
+    <h1>Registrar un libro</h1>
+    
+    <!-- Se crean distintos tipos de campos para rellenar -->
+
+    <!-- Titulo del libro -->
+    <form method="post">
+      <div class="titulo">
+        <input type="text" required>
+        <label>Título</label>
+      </div>
+
+      <!-- Autor del libro -->
+      <div class="autor">
+        <input type="text" required>
+        <label>Autor</label>
+      </div>
+
+      <!-- Tipo de libro se secciona en tres opciones: Libro, audio y video -->
+
+      <div class="tipolibro">
+        <label>Tipo de Libro</label><br>
+        <div class="radio-group">
+          <input type="radio" name="tipodelibro" value="Libro" required> Libro
+          <input type="radio" name="tipodelibro" value="Audio" required> Audio
+          <input type="radio" name="tipodelibro" value="Video" required> Video<br>
+        </div>
+      </div>
+
+      <!-- Dependiendo de la opción anterior, se despliega una tabla con opciones más específicas -->
+      <table class="tabla">
+        <tr>
+          <td>Seleccionar:&nbsp;</td>
+          <td>
+            <select name="term_in" id="term_id">
+              <option value="op1">Literatura Inglesa</option>
+              <option value="op2">Literatura Española</option>
+              <option value="op3">Literatura Chilena</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Editorial del libro -->
+      <div class="editorial">
+        <input type="text" required>
+        <label>Editorial</label>
+      </div>
+
+      <!-- Edición del libro -->
+      <div class="edicion">
+        <input type="text" required>
+        <label>Edición</label>
+      </div>
+
+      <!-- Año de edición del libro -->
+      <div class="añoedicion">
+        <input type="number" required>
+        <label>Año de Edición</label>
+      </div>
+
+      <!-- Ubicación del libro en las estanterías de la biblioteca -->
+      <div class="ubiestanteria">
+        <input type="text" required>
+        <label>Ubicación Estantería</label>
+      </div>
+
+      <!-- Botón de registrar los datos del libro -->
+      <input type="submit" value="Registrar">
+
+      <!-- Botón para volver a otra página -->
+      <div class="registrarse">
+        <a href="#">Volver</a>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+
+</html>
