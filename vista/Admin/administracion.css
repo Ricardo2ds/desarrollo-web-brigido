@@ -3,63 +3,66 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: url(../imagenes/inicio.png) no-repeat center center fixed; /* Imagen de fondo */
-    background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+    background: url(../imagenes/inicio.png) no-repeat center center fixed;
+    background-size: cover;
     color: white;
     display: flex;
+    flex-direction: column; /* Para asegurar que el footer quede abajo */
+    min-height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer hacia la parte inferior de la página */
+    background-color: #272729;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
 }
 
 /* Sidebar de Navegación */
-.sidebar {
+nav {
     width: 250px;
-    background: rgba(75, 55, 35, 0.94); /* Fondo opaco para mejor legibilidad */
+    background: #272729;
     height: 100vh;
     position: fixed;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar h2 {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 2px solid #C09788;
-    margin-bottom: 20px;
-}
-
-.sidebar ul {
+nav ul {
     list-style-type: none;
     padding: 0;
 }
 
-.sidebar ul li {
+nav ul li {
     padding: 15px 20px;
     text-align: left;
 }
 
-.sidebar ul li a {
+nav ul li a {
     color: white;
     text-decoration: none;
     display: block;
     transition: background 0.3s, padding-left 0.3s;
 }
 
-.sidebar ul li a:hover {
-    background: #C09788;
+nav ul li a:hover {
+    background: #384152; /* Color para hover */
     border-radius: 5px;
     padding-left: 10px;
 }
 
 /* Contenido Principal */
-.content {
+main {
     margin-left: 250px;
     padding: 40px;
     width: calc(100% - 250px);
     overflow-y: auto;
-    background: url(../Admin/inicio.png);
-    border-radius: 10px;
+    background: rgba(39, 39, 41, 0.9); /* Fondo más oscuro */
+    border-radius: 0; /* Sin bordes circulares */
 }
 
-.content h1 {
+h1 {
     color: #C09788;
     text-shadow: 
         1px 1px 0 rgba(0, 0, 0, 1),
@@ -73,11 +76,11 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background: rgba(255, 255, 255, 0.089); /* Fondo semitransparente para las tablas */
+    background: rgba(82, 82, 91, 0.9); /* Fondo oscuro para la tabla */
 }
 
 table thead {
-    background: #C09788;
+    background: #384152;
 }
 
 table th, table td {
@@ -87,7 +90,7 @@ table th, table td {
 }
 
 table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(82, 82, 91, 0.8); /* Hover sobre las filas */
 }
 
 table th {
@@ -100,12 +103,12 @@ table td {
 
 /* Responsivo */
 @media (max-width: 1200px) {
-    .content {
+    main {
         margin-left: 0;
         width: 100%;
     }
 
-    .sidebar {
+    nav {
         width: 100%;
         height: auto;
         position: relative;
