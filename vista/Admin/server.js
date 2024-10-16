@@ -1,38 +1,37 @@
+const express = require('express');
 const { MongoClient } = require('mongodb');
 
-// Reemplaza con tus credenciales y la base de datos real que estás utilizando
-const uri = "mongodb+srv://ricardododds2garrido:1234@cluster0.bq7cr.mongodb.net/biblioteca_db?retryWrites=true&w=majority&appName=Cluster0";
+const app = express();
+const port = 3000; // Cambia este puerto si es necesario
 
+// Reemplaza con tus credenciales de conexión
+const uri = "mongodb+srv://ricardododds2garrido:1234@cluster0.bq7cr.mongodb.net/biblioteca_db?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri);
 
-async function run() {
+app.use(express.json());
+
+// Inicia el servidor
+app.listen(port, async () => {
     try {
         await client.connect();
-        console.log("Conectado a MongoDB");
+        console.log("Conexión a la base de datos establecida");
 
-        const database = client.db("biblioteca_db"); // Nombre de tu base de datos
-        const collection = database.collection("ejemplos"); // Nombre de tu colección
+        // Crear una colección de ejemplo y agregar documentos si no existe
+        const database = client.db("biblioteca_db");
+        const collection = database.collection("ejemplo");
 
-        // Crear un documento para insertar
-        const doc = {
-            nombre: "Ejemplo",
-            descripcion: "Este es un documento de ejemplo",
-            fecha: new Date(),
-        };
+        // Insertar documentos de ejemplo
+        const ejemploData = [
+            { nombre: "Ejemplo 1", descripcion: "Descripción del ejemplo 1" },
+            { nombre: "Ejemplo 2", descripcion: "Descripción del ejemplo 2" },
+            { nombre: "Ejemplo 3", descripcion: "Descripción del ejemplo 3" },
+        ];
 
-        // Insertar el documento
-        const result = await collection.insertOne(doc);
-        console.log(`Documento insertado con el _id: ${result.insertedId}`);
+        const result = await collection.insertMany(ejemploData);
+        console.log(`${result.insertedCount} documentos insertados en la colección 'ejemplo'.`);
 
-        // Recuperar y mostrar todos los documentos de la colección
-        const documentos = await collection.find().toArray();
-        console.log("Documentos en la colección:");
-        console.log(documentos);
+        console.log(`Servidor escuchando en http://localhost:${port}`);
     } catch (error) {
-        console.error("Error al conectar a MongoDB:", error);
-    } finally {
-        await client.close();
+        console.error("Error al conectar a la base de datos:", error);
     }
-}
-
-run().catch(console.dir);
+});
